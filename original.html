@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyimbo za Kristo App</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body onload="" id="body">
+    <div id="wrapper">
+        <div class="container">
+            <div class="header relative">
+                <div class="title">
+                    <span class="show_back" id="show_back" onclick="showItem(['app_title', 'cards'], ['show_back','search_bar', 'song'], 'goBack')">
+                        <div class="light">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000000" d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
+                        </div>
+                        <div class="dark2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
+                        </div>
+                    </span>
+                    <div id="app_title" class="app_title active">Nyimbo za Kristo</div>
+                    <div class="search-bar" id="search_bar">
+                        <input type="text" id="search_box" class="search_box" onkeyup="performSearch()" placeholder="Search song">
+                        <div class="clean" onclick="clearSearchInput()">
+                            &times;
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="search" onclick="showItem(['search_bar', 'show_back', 'cards'], ['app_title', 'song'], 'search')">
+                    <div class="light l2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000000" d="M23.809 21.646l-6.205-6.205c1.167-1.605 1.857-3.579 1.857-5.711 0-5.365-4.365-9.73-9.731-9.73-5.365 0-9.73 4.365-9.73 9.73 0 5.366 4.365 9.73 9.73 9.73 2.034 0 3.923-.627 5.487-1.698l6.238 6.238 2.354-2.354zm-20.955-11.916c0-3.792 3.085-6.877 6.877-6.877s6.877 3.085 6.877 6.877-3.085 6.877-6.877 6.877c-3.793 0-6.877-3.085-6.877-6.877z"/></svg>
+                    </div>
+                    <div class="dark2 l2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M23.809 21.646l-6.205-6.205c1.167-1.605 1.857-3.579 1.857-5.711 0-5.365-4.365-9.73-9.731-9.73-5.365 0-9.73 4.365-9.73 9.73 0 5.366 4.365 9.73 9.73 9.73 2.034 0 3.923-.627 5.487-1.698l6.238 6.238 2.354-2.354zm-20.955-11.916c0-3.792 3.085-6.877 6.877-6.877s6.877 3.085 6.877 6.877-3.085 6.877-6.877 6.877c-3.793 0-6.877-3.085-6.877-6.877z"/></svg>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="content" id="content">
+                <div class="song" id="song">
+                    <p><h1><b>1 - U Mtakatifu,</b></h1><font color=#0B6138><b>1</b></font><br/>U Mtakatifu! Mungu Mwenyezi!<br/>Alfajiri sifa zako tutaimba,<br/>U Mtakatifu, Bwana wa huruma,<br/>Mungu wa vyote, hata milele.<br/><br/><font color=#0B6138><b>2</b></font><br/>U Mtakatifu! Na malaika,<br/>Wengi sana wanakuabudu wote.<br/>Elfu na maelfu, wanakusujudu,<br/>Wa zamani na hata milele.<br/><br/><font color=#0B6138><b>3</b></font><br/>U Mtakatifu! Ingawa giza,<br/>Lakuficha fahari tusiione,<br/>U Mtakatifu! Wewe peke yako,<br/>Kamili kwa uwezo na pendo.<br/></p>
+                </div>
+                <div id="cards" class="cards active">
+                    <div class="card">
+                        1 - U Mtakatifu
+                    </div>
+                </div>
+            </div>
+            <div class="enter-numbers en" id="number_fields">
+                <input type="number" value="0" id="number_input">
+                <div class="clear" id="clear" onclick="clearNumber()">
+                    <div class="scaledSvg">
+                        <svg width="64" height="64" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 21h-17l-7-7.972 7-8.028h17v16zm-16.09-14l-5.252 6.023 5.247 5.977h14.095v-12h-14.09zm6.09 4.586l2.586-2.586 1.414 1.414-2.586 2.586 2.586 2.586-1.414 1.414-2.586-2.586-2.586 2.586-1.414-1.414 2.586-2.586-2.586-2.586 1.414-1.414 2.586 2.586z"/></svg>
+                    </div>
+                </div>
+                <div class="numbers" id="numbers">
+                    <div class="num" onclick="insertNum(1)">
+                        1
+                    </div>
+                    <div class="num" onclick="insertNum(2)">
+                        2
+                    </div>
+                    <div class="num" onclick="insertNum(3)" style="border-right: none;">
+                        3
+                    </div>
+                    <div class="num" onclick="insertNum(4)">
+                        4
+                    </div>
+                    <div class="num" onclick="insertNum(5)">
+                        5
+                    </div>
+                    <div class="num" onclick="insertNum(6)" style="border-right: none;">
+                        6
+                    </div>
+                    <div class="num" onclick="insertNum(7)">
+                        7
+                    </div>
+                    <div class="num" onclick="insertNum(8)">
+                        8
+                    </div>
+                    <div class="num" onclick="insertNum(9)" style="border-right: none;">
+                        9
+                    </div>
+                    <div class="num" onclick="insertNum(0)" style="border-bottom: none;">
+                        0
+                    </div>
+                    <div class="go" onclick="goToSong()">
+                        GO
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-button" onclick="callNumberBox()">
+        <div class="circles">
+            <div class="row">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="row">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="row">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+
+<div class="bg-drop" id="bgdrop" onclick="hideNumbers()"></div>
+<div class="design">
+    <div class="text">
+    Developed by: David Machibya, For any Inquiry: <a>+255 752 759 016</a> | <a href="mailto:dmachibya@gmail.com">dmachibya@gmail.com</a> | <a href="http://www.onegotech.com/">www.onegotech.com</a>
+
+    </div>
+    <div class="theme-change">
+        <div class="theme-light" onclick="switchTheme('light')">
+            Light
+        </div>
+        <div class="theme-dark" onclick="switchTheme('dark')">
+            Dark
+        </div>
+        <div class="clearfix"></div>
+    
+    </div>
+</div>
+
+
+<script>
+    loadDoc()
+
+    var songs;
+    var titles = [];
+    var titles_lower = [];
+
+function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        songs = JSON.parse(this.responseText);
+
+        populateUI(songs);
+        }
+    };
+    xhttp.open("GET", "swahili_v2.json", true);
+    xhttp.send();
+
+    switchTheme();
+}
+
+
+var cards = document.getElementById("cards");
+var song = document.getElementById("song");
+var show_back = document.getElementById("show_back");
+var number_input = document.getElementById("number_input");
+var bgdrop = document.getElementById("bgdrop");
+var number_fields = document.getElementById("number_fields"); 
+var search_box = document.getElementById("search_box");
+var app_title = document.getElementById("app_title");
+var theme = "dark";
+
+function $(elem){
+    return document.getElementsByClassName(elem)[0];
+}
+function switchTheme(theme){
+    if(theme == 'dark'){
+        document.body.classList.add('dark');
+    }else {
+        document.body.classList.remove('dark');
+    }
+//    document.body.style.background = "#dedede";
+//    $("container").style.background = "#f1f1f1";
+//    $("header").style.background = "#fefefe";
+//    $("header").style.color = "#111111";
+//    $("content").style.color = "#111111";
+   
+//    setTimeout(() => {
+//        card_hovered = document.getElementsByClassName("card");
+//        console.log(card_hovered.length);
+
+//         $("search_box").style.color = "#111111";
+
+//        for (let i = 0; i < card_hovered.length; i++) {
+//             const element = card_hovered[i];
+            
+//             element.addEventListener("mouseover", function(){
+//                 element.style.background = "#e1e1e1";
+//                 // console.log("hovered");
+//             });
+
+//             element.addEventListener("mouseout", function(){
+//                 element.style.background = "#f1f1f1";
+//             })
+//         }
+
+//    }, 3000);
+  
+}
+
+
+function populateUI(array, type=''){
+
+    var content_div = document.getElementById("content"); // div to populate
+    windowHeight = window.innerHeight; //getting device window height for calculating the height of div
+    content_div.style.height = (windowHeight - windowHeight*0.22)+"px";
+    app_title.innerHTML = "Nyimbo za Kristo";
+
+    var cards = "";
+    // // // console.log(array[0].content)
+    // // console.log(array);
+    if(type == 'titles'){
+        // filtered_array = [];
+        // for (let i = 0; i < array.length; i++) {
+        //     const element = array[i];
+        //     // // // console.log("index: "+titles.indexOf(element));
+            
+        //     let this_song = titles[titles.indexOf(element)];
+        //     filtered_array.push(this_song);
+
+        // }
+            // // // console.log(filtered_array);
+        for (let i = 0; i < array.length; i++) {
+            const song = songs[array[i].number-1];
+
+            // // // console.log(array[i].title);
+            // titles.push(array[i].title); 
+            // // console.log(song.number);
+            var one_card = `
+            <div class="card" onclick='switchSong(${song.number-1})'>
+                ${song.title}
+            </div>
+            `;
+            cards += one_card;
+        }
+    }else {
+        for (let i = 0; i < array.length; i++) {
+            const song = array[i];
+            // // // console.log(array[i].title);
+
+
+            // titles.push(array[i].title); 
+            // titles_lower.push(array[i].title.toLowerCase()); 
+            // console.log(song.number);
+
+            var one_card = `
+            <div class="card" onclick='switchSong(${song.number-1})'>
+                ${song.title}
+            </div>
+            `;
+            cards += one_card;
+        }
+
+    }
+    
+    document.getElementById("cards").innerHTML = cards;
+
+}
+
+function showItem(toShow, toHide, extraMethod=''){
+    for (let i = 0; i < toShow.length; i++) {
+        const element = toShow[i];
+        document.getElementById(element).classList.add('active');
+    }
+
+    for (let i = 0; i < toHide.length; i++) {
+        const element = toHide[i];
+        document.getElementById(element).classList.remove('active');
+    }
+
+    if(extraMethod == "goBack"){
+        goBack();
+    }else if(extraMethod == "search"){
+        search_box.focus();
+        show_back.style.display = "block";
+    }
+}
+
+function performSearch(){
+    var value = search_box.value.toLowerCase();
+    // filtered = titles_lower.filter(function(name){return name.match(value);});
+    // // // console.log(filtered);
+    filtered = [];
+    for(var i=0; i < songs.length; i++){
+        if(songs[i].title.toLowerCase().search(value) > -1){
+        filtered.push(songs[i]); 
+        }
+    }
+    populateUI(filtered, 'titles');
+}
+
+function goBack(){
+    song.classList.remove("active");
+    cards.classList.add("active");
+    show_back.style.display = "none";
+
+    populateUI(songs);
+    // console.log("going back");
+}
+
+
+function callNumberBox(){
+    // // console.log("clicked");
+    number_fields.classList.add("active");
+    bgdrop.classList.add("active");
+    number_value = "";
+    number_input.value = "0";
+}
+function hideNumbers(){
+    number_fields.classList.remove("active");
+    bgdrop.classList.remove("active"); 
+}
+
+function switchSong(index){
+    
+    // // console.log("reached");
+
+    //toggle some classes
+    cards.classList.remove("active");
+    song.classList.add("active");
+    show_back.classList.add("active");
+    number_fields.classList.remove("active");
+    bgdrop.classList.remove("active")
+    show_back.style.display = "block";
+    
+    song.innerHTML = songs[index].content;
+    app_title.innerHTML = songs[index].title;
+}
+
+//
+var number_value = "0";
+function insertNum(num){
+    var new_value = number_input.value
+
+    if(number_value == 0){
+        number_input.value = num;
+        number_value = num;
+    }else {
+        number_value = ""+number_value+num;
+        number_input.value = number_value;
+    }
+}
+
+function clearNumber(){
+    // // console.log(number_value);
+    number_value = ""+number_value;
+    number_value = number_value.slice(0, -1);
+    number_input.value = number_value;
+}
+
+function goToSong(){
+
+    if(parseInt(number_input.value)<=0 || parseInt(number_input.value)> 220){
+        // console.log("incorrect Number");
+        number_fields.classList.add("animate-border");
+
+        setTimeout(function(){
+            number_fields.classList.remove("animate-border");
+        }, 2000)
+    }else {
+        switchSong(parseInt(number_value)-1);
+    }
+}
+
+function clearSearchInput(){
+    search_box.value = "";
+    populateUI(songs);
+    search_box.focus();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body {
+    background: #dedede;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.content::-webkit-scrollbar {
+    width: .8em;
+  }
+   
+  .content::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  .content::-webkit-scrollbar-thumb {
+    background-color: #46b5d1;
+    border-radius: 6px;
+  }
+
+
+.wrapper {
+}
+.container {
+    max-width: 1024px;
+    margin: 2em auto;
+    background: #f1f1f1;
+    position: relative;
+}
+.header {
+    background: #e9e9e9;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    color: #111;
+    padding: 1em;
+}
+.title {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 1em;
+    width: 90%;
+    float: left;
+}
+.search {
+    float: right;
+    cursor: pointer;
+    position: absolute;
+    right: 68px;
+    top: 0px;
+}
+.light {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.dark2 {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: none;
+}
+
+.app_title {
+    width: 70%;
+    display: none;
+    margin-left: 20px;
+}
+.search-bar {
+    display: none;
+    margin-left: 20px;
+}
+.content {
+    color: #333;
+    overflow-y: scroll;
+}
+.cards {
+    display: none;
+}
+.card {
+    padding: 1em 2.5em;
+    border-bottom: 1px solid #aaa;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.card:hover {
+    background: #d1d1d1;
+    color: #46b5d1;
+}
+.floating-button {
+    width: 80px;
+    height: 80px;
+    background: #eb5e0b;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.song {
+    text-align: left;
+    font-size: 24px;
+    padding: .5em 2em;
+    display: none;
+}
+.song font {
+    color: #46b5d1;
+}
+.show_back{
+    cursor: pointer;
+    display: none;
+    margin-right: 1em;
+    float: left;
+} 
+.clean {
+    color: #ccc;
+    float: left;
+    margin-left: -1em;
+    cursor: pointer;
+}
+.active-inline {
+    display: inline-block;
+}
+.enter-numbers{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    background: #555;
+    height: 400px;
+    width: 400px;
+    z-index: 99;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+.en input {
+    border: none;
+    display: block;
+    width: 50%;
+    float: left;
+    text-align: right;
+    font-size: 32px;
+    padding: 1em 10%;
+    background: none;
+    color: #fff;
+    background: #777;
+    border-bottom: 4px solid #46b5d1;
+}
+.clear {
+    width: 30%;
+    height: 101px;
+    border-bottom: 4px solid #46b5d1;
+    float: left;
+    background: #dd8876;
+}
+.scaledSvg {
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 64px;
+}
+@keyframes animate {
+    from {background-color: red;}
+    to {background-color:#990000;}
+  }
+.animate-border {
+    animation-name: animate;
+    animation-duration: 2s;
+}
+.bg-drop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9;
+    display: none;
+}
+.numbers {
+    padding: 1em;
+}
+.num {
+    width: 33%;
+    border-bottom: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    padding: .4em 0;
+    font-size: 32px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+}
+.num:hover {
+    background: #777;
+}
+.go {
+    width: 66%;
+    float: left;
+    background: #46b5d1;    
+    font-size: 32px;
+    padding: .4em .015em;
+    text-align: center;
+    cursor: pointer;
+}
+.go:hover {
+    background: #35a2b0;
+}
+.search-bar {
+
+}
+.search-bar input {
+    display: block;
+    width: 50%;
+    float: left;
+    padding: .4em 1em;
+    background: none;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid #aaa;
+}
+.search-bar input::placeholder {
+    color: #aaa;
+}
+.search-bar input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+}
+
+.design {
+    bottom: 10px;
+    font-size: 12px;
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-top: -.5em;
+    color: #777;
+}
+.design a {
+    color: #999;
+}
+.design .text {
+    width: 70%;
+    float: left;
+}
+.theme-change {
+    float: right;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+    background: #ccc;
+    margin-top: -1.4em;
+    border-radius: 20px;
+}
+.theme-dark, .theme-light {
+    float: left;
+    font-size: 12px;
+    color: #333;
+    padding: 10px 24px;
+    background: #ccc;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.theme-light {
+    background: #eee;
+}
+.theme-dark {
+    color: #777;
+}
+.circles {
+    position: relative;
+    top: 14px;
+    left: 22px;
+}
+.circle {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #000;
+}
+.row:last-child .circle {
+    margin-left: .8em;
+}
+
+
+.active {
+    display: block;
+}
+.search-bar input {
+    color: #333;
+}
+
+/** dark theme **/
+body.dark {
+    background: #111;
+}
+
+body.dark .theme-dark {
+    background: #333;
+    color: #fff;
+}
+body.dark .theme-light {
+    background: #444;
+    color: #aaa;
+}
+body.dark .container {
+    background: #333;
+}
+body.dark .header {
+    color: #e1e1e1;
+    background: #3e3e3e;
+}
+body.dark .content {
+    color: #f1f1f1;
+}
+body.dark .card:hover {
+    background: #3e3e3e;
+}
+body.dark .search_box {
+    color: #fff;
+}
+body.dark .design {
+    color: #777;
+}
+body.dark .dark2 {
+    display: block;
+}
+body.dark .light {
+    display: none;
+}
+
+body.dark .theme-change {
+    background: #777;
+}
+
+body.dark .theme-light {
+    background: #777;
+}
+body.dark .theme-dark {
+    color: #eee;
+}
+
+
+@media screen and (max-width: 1024px){
+    .container {
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 640px){
+    .floating-button {
+        width: 60px;
+        height: 60px;
+    }
+    .circles {
+        top: 4px;
+        left: 12px;
+        transform: scale(0.8);
+    }
+    .circle {
+        width: 8px;
+        height: 8px;
+    }
+    .enter-numbers {
+        left: 10%;
+        width: 80%;
+    }
+    .search-bar {
+        width: 70%;
+    }
+    .search-bar input {
+        width: 100%;
+    }
+}
